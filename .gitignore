@@ -1,3 +1,14 @@
+# other #
+#########
+
+*.ipynb_checkpoints
+web_scraping_incl_tweets - Shortcut.lnk
+scripts1_login_search_scrape_links.py
+udemy course
+starting
+ghostdriver.log
+
+
 # Compiled source #
 ###################
 *.com
@@ -36,9 +47,3 @@
 ehthumbs.db
 Thumbs.db
 
-# other
-*.ipynb_checkpoints
-web_scraping_incl_tweets - Shortcut.lnk
-scripts1_login_search_scrape_links.py
-udemy course
-starting
