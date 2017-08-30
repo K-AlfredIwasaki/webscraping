@@ -3,7 +3,8 @@ from selenium import webdriver
 import requests
 from selenium.webdriver.common.keys import Keys
 
-url = 'https://www.google.com/search?source=hp&q=Affirmed+Networks+linkedin&oq=Affirmed+Networks+linkedin&gs_l=psy-ab.3..0.15505.20313.0.20796.16.12.2.0.0.0.90.838.12.12.0....0...1.1.64.psy-ab..2.14.851.0..0i22i30k1.BgS2H7RH5oY'
+search_key_words = 'Capital+Float+Crunchbase'
+url = 'https://www.google.com/search?source=hp&q={}'.format(search_key_words)
 
 driver = webdriver.PhantomJS(executable_path = r'C:\Users\K\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin\phantomjs.exe')
 
@@ -22,4 +23,11 @@ for link in links:
 
 # reference
 # https://github.com/DanMcInerney/search-google/blob/master/search-google.py#L17
+
+driver.quit()
+
+
+#https://www.crunchbase.com/organization/capital-float
+
+
 

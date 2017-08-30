@@ -25,6 +25,6 @@ part2 = soup.find("code", {"id":"decoratedJobPostingModule"})
 print("\n")
 print (part2)
 
-
+driver.quit()
 
 # print (soup.prettify())

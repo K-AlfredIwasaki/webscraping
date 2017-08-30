@@ -20,6 +20,8 @@ print(soup.prettify())
 jobs = soup.find('code', {'id':'decoratedJobPostingsModule'})
 print (jobs)
 
+driver.quit()
+
 
 # <div class="search-results-parent">
 # <li itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="" class="job-listing">
