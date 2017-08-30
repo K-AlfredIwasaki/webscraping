@@ -18,8 +18,6 @@ class Article():
 		self.link = ""
 		self.excerpt = ""
 
-
-
 def get_items(url):
 	driver = webdriver.PhantomJS(executable_path = r'C:\Users\K\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin\phantomjs.exe')
 
@@ -46,17 +44,20 @@ def get_items(url):
 
 		# get an artitle title and a link
 		new_article.title = a.text
-		print (a.text)
-		new_article.link = a['href']
-		print (a['href'])
+		if new_article.title:
+			print (a.text)
+			new_article.link = a['href']
+			print (a['href'])
 
-		# get excerpt
-		p = li.find('p', class_ = "excerpt")
+			# get excerpt
+			p = li.find('p', class_ = "excerpt")
 
-		new_article.excerpt = p.text.strip(" 					").replace(" 					Read More","")
-		print (new_article.excerpt)
+			new_article.excerpt = p.text.strip(" 					").replace(" 					Read More","")
+			print (new_article.excerpt)
 
-		article_list.append(new_article)
+			article_list.append(new_article)
+		else:
+			pass
 
 
 	driver.quit()
@@ -65,12 +66,12 @@ def get_items(url):
 
 
 def write_records(article_list):
-	csvFile = open("article.csv", 'a', newline='')
+	csvFile = open("article.csv", 'a', newline='', encoding="utf8")
 	try:
 		writer = csv.writer(csvFile)
 		writer.writerow(('title', 'link', 'excerpt'))
 		for article in article_list:
-			writer.writerow( (article.title, article.link, article.excerpt))
+			writer.writerow( (article.title, article.link, article.excerpt) )
 
 	finally:
 		csvFile.close()
