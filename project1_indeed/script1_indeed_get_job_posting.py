@@ -52,5 +52,6 @@ for jobdesc in td.find_all('div', class_ = ' row result'):
 	desc = jobdesc.find('div', class_ = 'paddedSummary').text.strip( )
 	print (desc)
 
+driver.quit()
 
 
